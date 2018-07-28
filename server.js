@@ -17,7 +17,7 @@ io.on('connection', (socket) => {
     })
     
     socket.on('newMsg', (data) => {
-        console.log('SENDING MSG:');
+        console.log('SENDING MSG TO:', data.room);
         io.in(data.room).emit('serverMsg', {msg: data.msg})
     })
 });
